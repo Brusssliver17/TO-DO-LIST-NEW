@@ -1,0 +1,69 @@
+ :root{
+      --accent:#ff5945;
+      --muted:#edeef0;
+      --text:#002765;
+      --card:#ffffff;
+      --shadow:0 6px 18px rgba(0,0,0,.08);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+    body{transition:background .3s,color .3s}
+    body.light{background:#f4f4f4;color:#111}
+    body.dark{background:#121212;color:#eee}
+    body.blue{background:linear-gradient(115deg,#153677,#4e085f,black);color:#fff}
+
+    .container{min-height:100vh;padding:16px;display:flex;justify-content:center;align-items:flex-start}
+    .todo-app{
+      width:100%;max-width:720px;background:var(--card);margin:48px auto 24px;
+      padding:28px 22px;border-radius:14px;box-shadow:var(--shadow);transition:background .3s,color .3s
+    }
+    body.dark .todo-app{background:#1e1e1e;color:#ddd}
+    body.blue .todo-app{background:rgba(255,255,255,.08);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.12)}
+
+    .header{display:flex;align-items:center;gap:12px;justify-content:space-between;margin-bottom:16px}
+    .title{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--text)}
+    body.dark .title{color:#d7e2ff} body.blue .title{color:#fff}
+    .modes{display:flex;gap:8px}
+    .btn{
+      border:none;outline:none;background:var(--accent);color:#fff;cursor:pointer;
+      border-radius:12px;padding:10px 14px;font-size:14px
+    }
+    .btn.secondary{background:#8b8b8b} body.dark .btn.secondary{background:#2b2b2b;color:#ddd}
+    .btn.icon{padding:8px 10px;border-radius:10px}
+
+    .row{display:grid;grid-template-columns:1fr 150px auto;gap:10px;background:var(--muted);
+      border-radius:16px;padding:10px 10px 10px 14px;align-items:center;margin-bottom:12px}
+    body.dark .row{background:#232323} body.blue .row{background:rgba(255,255,255,.12)}
+    .text-input{border:none;background:transparent;outline:none;font-size:15px;padding:8px}
+    .date-input,.filter-date{border:none;background:#fff;border-radius:10px;padding:10px 12px;outline:none}
+    body.dark .date-input, body.dark .filter-date{background:#2a2a2a;color:#eee}
+    body.blue .date-input, body.blue .filter-date{background:rgba(255,255,255,.9);color:#111}
+
+    .filters{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}
+    .filters .tag{font-size:12px;padding:8px 10px;border-radius:10px;background:var(--muted)}
+    body.dark .filters .tag{background:#232323} body.blue .filters .tag{background:rgba(255,255,255,.12)}
+
+    ul{margin-top:6px;list-style:none}
+    .item{
+      display:grid;grid-template-columns:auto 1fr auto auto;gap:10px;align-items:center;
+      background:transparent;border-radius:10px;padding:10px 10px;margin-bottom:6px
+    }
+    .handle{cursor:grab;user-select:none;font-size:18px;opacity:.7}
+    .check{width:18px;height:18px}
+    .text{padding:6px 8px;border-radius:8px;min-height:18px;outline:none}
+    .text[contenteditable="true"]{background:rgba(0,0,0,.06)}
+    body.dark .text[contenteditable="true"]{background:#2b2b2b}
+    body.blue .text[contenteditable="true"]{background:rgba(255,255,255,.12)}
+    .date-badge{
+      font-size:12px;padding:6px 8px;border-radius:8px;background:var(--muted);cursor:pointer;white-space:nowrap
+    }
+    body.dark .date-badge{background:#232323} body.blue .date-badge{background:rgba(255,255,255,.12)}
+    .del{border:none;background:transparent;font-size:20px;cursor:pointer;opacity:.7;padding:6px 8px}
+    .done .text{text-decoration:line-through;opacity:.6}
+
+    @media (max-width:768px){
+      .todo-app{margin:20px auto;padding:18px 14px}
+      .row{grid-template-columns:1fr 1fr auto}
+      .date-input{width:100%}
+      .item{grid-template-columns:auto 1fr auto auto}
+      .title{font-size:18px}
+    }

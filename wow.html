@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pro To-Do (Calendar + Drag & Drop)</title>
+ <link rel="stylesheet" href="index.css" />
+</head>
+<body class="light">
+  <div class="container">
+    <div class="todo-app">
+      <div class="header">
+        <div class="title">TO-DO LIST<img src="icon.png" alt=""></div>
+        
+        <div class="modes">
+          <button class="btn icon" id="mode-toggle" title="Toggle Theme">🌙</button>
+            
+        </div>
+      </div>
+
+      <!-- Add row -->
+      <div class="row">
+        <input id="input-box" class="text-input" type="text" placeholder="Write something?" />
+        <input id="add-date" class="date-input" type="date" />
+        <button id="add-btn" class="btn">ADD</button>
+      </div>
+
+      <!-- Filters -->
+      <div class="filters">
+        <span class="tag">Filter by date:</span>
+        <input id="filter-date" class="filter-date" type="date" />
+        <button id="clear-filter" class="btn secondary">All</button>
+        <button id="today-filter" class="btn secondary">Today</button>
+        <button id="sort-date" class="btn secondary" title="Sort by date">Sort by date</button>
+      </div>
+
+      <ul id="list-container"></ul>
+    </div>
+  </div>
+
+ <script src="index.js"></script>
+</body>
+</html>
