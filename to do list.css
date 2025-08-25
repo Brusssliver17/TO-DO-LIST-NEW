@@ -60,10 +60,79 @@
     .del{border:none;background:transparent;font-size:20px;cursor:pointer;opacity:.7;padding:6px 8px}
     .done .text{text-decoration:line-through;opacity:.6}
 
-    @media (max-width:768px){
-      .todo-app{margin:20px auto;padding:18px 14px}
-      .row{grid-template-columns:1fr 1fr auto}
-      .date-input{width:100%}
-      .item{grid-template-columns:auto 1fr auto auto}
-      .title{font-size:18px}
-    }
+ @media (max-width:768px){
+  .todo-app{
+    margin:20px auto;
+    padding:18px 14px;
+    width:100%;
+  }
+
+  .row{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+
+  .text-input{
+    font-size:14px;
+    width:100%;
+  }
+
+  .date-input,
+  .filter-date{
+    width:100%;
+    font-size:14px;
+  }
+
+  .filters{
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+
+  .filters .tag{
+    font-size:11px;
+    padding:6px 8px;
+  }
+
+  .item{
+    grid-template-columns: auto 1fr auto;
+    gap:8px;
+    padding:8px;
+  }
+
+  .title{
+    font-size:18px;
+  }
+
+  .btn{
+    padding:8px 12px;
+    font-size:13px;
+  }
+
+  .btn.icon{
+    padding:6px 8px;
+  }
+
+  .date-badge{
+    font-size:11px;
+    padding:4px 6px;
+  }
+}
+
+@media (max-width:480px){
+  .row{
+    grid-template-columns:1fr;
+  }
+  .filters{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  .filters .tag{
+    width:100%;
+    text-align:center;
+  }
+  .item{
+    grid-template-columns: auto 1fr;
+  }
+}
